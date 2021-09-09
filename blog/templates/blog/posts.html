@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block pageTitle %}
+    Summary
+{% endblock %}
+
+
+{% block content %}
+<h1>Summary of All the posts</h1>
+    {% for post in allPosts %}        
+        <h2><a href = '{% url 'postDetailsPage' postTitle=post.title %}'>{{post.title}}</h2>
+        <p>{{post.details}}</p>
+        <br><br><br>
+    {% endfor %}
+{% endblock %}

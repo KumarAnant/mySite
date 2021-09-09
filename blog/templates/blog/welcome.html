@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{%  load static %}
+
+{% block pageTitle %}
+    My Blog Page
+{% endblock%}
+
+{% block CSS_files %}
+    <link rel="stylesheet" href='{% static 'styles.css' %}' >
+    <link rel="stylesheet" href='{% static 'blog/blog.css' %}' >
+{% endblock %}
+
+{% block content %}
+{% comment %} {% include 'challenges/includes/header.html' with active_page="index" %} {% endcomment %}
+<h1>List of all Blogs here:</h1>
+    <ul>
+        {% for title in allTitles  %}
+            <li><a href = '{% url 'postDetailsPage' postTitle=title %}'>{{title}}</li>            
+        {%  endfor %}
+    </ul>
+{% endblock %}

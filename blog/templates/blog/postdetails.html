@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block pageTitle %}
+    Post Detail
+{% endblock %}
+
+
+{% block content %}
+    {% if post != None %}
+        <h1>{{post.title}}</h1>        
+        <p>{{post.details}}</p>
+        <br><br><br>
+    {% else %}
+        <h2>{{postTitle}} not found.</h2>
+    {% endif %}
+    
+{% endblock %}
